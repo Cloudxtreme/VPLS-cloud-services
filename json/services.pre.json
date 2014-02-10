@@ -1,17 +1,17 @@
 {
 	"services":
 	{
-		"1": "mysqld",
-		"2": "mongod",
-		"3": "qpidd",
-		"4": "memcached"
+		"1": "service1",
+		"2": "service2"
 	},
 	"runcmd":
 	{
 		"start":
 		{
-			"1": "ceph-fuse -m 10.0.0.70:/ /var/lib/nova/instances"
+			"1": "run me using os.system() prior to startup"
 		},
-		"stop": {}
+		"stop": {
+			"2": "run me using os.system() prior to shutdown"
+		}
 	}
 }

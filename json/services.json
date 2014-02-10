@@ -39,15 +39,6 @@
 			"12": "openstack-nova-compute"
 		}
 	},
-	"horizon":
-	{
-		"startup": "8",
-		"shutdown": "1",
-		"list": 
-		{
-			"1": "httpd"
-		}
-	},
 	"cinder":
 	{
 		"startup": "4",
@@ -96,6 +87,15 @@
 			"2": "openstack-ceilometer-central",
 			"3": "openstack-ceilometer-collector",
 			"4": "openstack-ceilometer-compute"
+		}
+	},
+	"horizon":
+	{
+		"startup": "8",
+		"shutdown": "1",
+		"list": 
+		{
+			"1": "httpd"
 		}
 	}
 }
