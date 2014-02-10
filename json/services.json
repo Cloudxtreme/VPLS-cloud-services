@@ -1,0 +1,101 @@
+{
+	"keystone": 
+	{
+		"startup": "1",
+		"shutdown": "8",
+		"list":
+		{
+			"1": "openstack-keystone"
+		}				
+	},
+	"glance":
+	{
+		"startup": "2",
+		"shutdown": "7",
+		"list":
+		{
+			"1": "openstack-glance-api",
+			"2": "openstack-glance-registry",
+			"3": "openstack-glance-scrubber"
+		}
+	},
+	"nova":
+	{
+		"startup": "3",
+		"shutdown": "6",
+		"list":
+		{
+			"1": "openstack-nova-api",
+			"2": "openstack-nova-cert",
+			"3": "openstack-nova-consoleauth",
+			"4": "openstack-nova-scheduler",
+			"5": "openstack-nova-conductor",
+			"6": "openstack-nova-novncproxy",
+			"7": "openstack-nova-metadata-api",
+			"8": "openstack-nova-network",
+			"9": "openstack-nova-objectstore",
+			"10": "openstack-nova-spicehtml5proxy",
+			"11": "openstack-nova-xvpvncproxy",
+			"12": "openstack-nova-compute"
+		}
+	},
+	"horizon":
+	{
+		"startup": "8",
+		"shutdown": "1",
+		"list": 
+		{
+			"1": "httpd"
+		}
+	},
+	"cinder":
+	{
+		"startup": "4",
+		"shutdown": "5",
+		"list": 
+		{
+			"1": "openstack-cinder-api",
+			"2": "openstack-cinder-scheduler",
+			"3": "openstack-cinder-backup",
+			"4": "openstack-cinder-volume"
+		}
+	},
+	"neutron": 
+	{
+		"startup": "5",
+		"shutdown": "4",
+		"list": 
+		{
+			"1": "neutron-server",
+			"2": "neutron-metadata-agent",
+			"3": "neutron-l3-agent",
+			"4": "neutron-dhcp-agent",
+			"5": "neutron-lbaas-agent",
+			"6": "neutron-vpn-agent",
+			"7": "neutron-openvswitch-agent"
+		}
+	},
+	"heat":
+	{
+		"startup": "6",
+		"shutdown": "3",
+		"list":
+		{
+			"1": "openstack-heat-api",
+			"2": "openstack-heat-api-cfn",
+			"3": "openstack-heat-engine"
+		}
+	},
+	"ceilometer":
+	{
+		"startup": "7",
+		"shutdown": "2",
+		"list": 
+		{
+			"1": "openstack-ceilometer-api",
+			"2": "openstack-ceilometer-central",
+			"3": "openstack-ceilometer-collector",
+			"4": "openstack-ceilometer-compute"
+		}
+	}
+}

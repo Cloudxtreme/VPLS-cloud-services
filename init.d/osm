@@ -1,0 +1,62 @@
+#!/usr/bin/python
+import os
+import sys
+
+# RHEL/CentOS Upstart Scripts for OpenStack
+#
+# I really don't like having the manually startup and shutdown OpenStack services
+# in the right order every time a server fails, or connectivity is lost, or anything
+# happens that requires a restart of services. This script parses a JSON file to get
+# the correct startup and shutdown sequence for OpenStack services. Please use this
+# instead of the built-in 'service * start/stop' commands.
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ #
+# Init Info \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ #
+#
+# Provides:          osm
+# Default-Start:     3 4 5
+# Short-Description: OpenStack Service Manager
+# Description:       Upstart scripts to manage the graceful startup and shutdown
+#                    of OpenStack services in the correct order.
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ #
+# Chkconfig Info \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ #
+#
+# m7d:               OpenStack Service Manager
+# chkconfig:         345 97 03
+# description:       Upstart scripts to manage the graceful startup and shutdown
+#                    of OpenStack services in the correct order.
+# processname:       osm
+# pidfile:           /var/run/osm.pid
+
+def start():    
+    os.system('/usr/bin/python /usr/bin/osm start all')
+    
+def stop():
+    os.system('/usr/bin/python /usr/bin/osm stop all')
+        
+def restart():
+    stop()
+    start()
+            
+def status():
+    os.system('/usr/bin/python /usr/bin/osm status all')
+
+def usage():
+    print "Usage: service osm {start|stop|restart|status}\n"
+    
+try:
+    if sys.argv[1] == 'start':
+        start()
+    elif sys.argv[1] == 'stop':
+        stop()
+    elif sys.argv[1] == 'restart':
+        restart()
+    elif sys.argv[1] == 'status':
+        print "\nOpenStack Service Manager\n"
+        status()
+        print ""
+    else:
+        usage()
+except:
+    usage()
