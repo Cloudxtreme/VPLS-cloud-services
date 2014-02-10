@@ -28,28 +28,34 @@ Add the "osm" service to using chkconfig:
 
 Configuration
 -------------------
-**Startup/Shutdown Order**
+**Startup/Shutdown Order**  
 To set the startup and shutdown order for OpenStack services, edit the "/etc/osm/services.json" file. This file contains a list of OpenStack services (i.e., keystone, nova, cinder, etc.), their startup/shutdown priority, and a list of sub-services (i.e., openstack-nova-api, openstack-nova-compute, etc.).  
 
     [root@server ~]# vi /etc/osm/services.json  
 
-**OpenStack Service Runlevels**
-This file is a replacement for chkconfig run levels. You MUST disable these services in chkconfig otherwise this script will not work properly. A service in this file can either be set to “on” or “off”.  
+**OpenStack Service Runlevels**  
+This file is a replacement for chkconfig run levels. You MUST disable these services in chkconfig otherwise this script will not work properly. A service in this file can either be set to "on" or "off".  
 
     [root@server ~]# vi /etc/osm/services.run.json  
 
-**OpenStack Pre-Start/Stop Tasks**
+**OpenStack Pre-Start/Stop Tasks**  
 Depending on the server and your OpenStack environment, you may want to start specific services on specific nodes, and run arbitrary commands prior to startup and shutdown. This file gives you the means to specify pre-start services, and pre-start/stop Linux commands:  
 
     [root@server ~]# vi /etc/osm/services.pre.json  
 
 Usage
 -------------------
-You can manage all OpenStack services the same way you would normally use the “service” command:  
-**Start OpenStack Services**
+You can manage all OpenStack services the same way you would normally use the "service" command:  
+**Start OpenStack Services**  
+
     [root@server ~]# service osm start  
+    
 **Stop OpenStack Services**  
+
     [root@server ~]# service osm stop  
+    
 **Print Service Status**  
+
     [root@server ~]# service osm status  
+    
 The above command will print a list of all pre-start services, and pre-start/stop commands.
