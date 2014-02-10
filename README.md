@@ -9,11 +9,13 @@ Installation
 -------------------
 
 Copy the following files to the specified destinations on your CentOS 6.x server:  
-* bin/osm -> /usr/bin/osm
-* init.d/osm -> /etc/init.d/osm
-* json/* -> /etc/osm/.  
+    [root@server ~]# cp VPLS-cloud-services/bin/osm /usr/bin/osm
+    [root@server ~]# cp VPLS-cloud-services/init.d/osm /etc/init.d/osm
+    [root@server ~]# cp VPLS-cloud-services/json/* /etc/osm/.
 
 Make sure both "osm" files are executable.  
+
+    [root@server ~]# chmod +x /usr/bin/osm /etc/init.d/osm
 
 Configuration
 -------------------

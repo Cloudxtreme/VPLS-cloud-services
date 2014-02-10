@@ -11,7 +11,7 @@
 			"1": "run me using os.system() prior to startup"
 		},
 		"stop": {
-			"2": "run me using os.system() prior to shutdown"
+			"1": "run me using os.system() prior to shutdown"
 		}
 	}
 }
