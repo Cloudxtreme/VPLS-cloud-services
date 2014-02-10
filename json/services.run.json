@@ -25,7 +25,7 @@
     "neutroff-l3-agent":                    "off",
     "neutroff-dhcp-agent":                  "off",
     "neutroff-lbaas-agent":                 "off",
-    "neutroff-vpn-agent":	                "off",
+    "neutroff-vpn-agent":                   "off",
     "neutroff-openvswitch-agent":           "off",
     "openstack-heat-api":                   "off",
     "openstack-heat-api-cfn":               "off",
